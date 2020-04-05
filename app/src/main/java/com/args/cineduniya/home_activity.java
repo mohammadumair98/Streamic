@@ -46,9 +46,13 @@ public class home_activity extends AppCompatActivity implements ImageAdapter.OnI
 
     private RecyclerView mRecyclerView2;
     private ImageAdapter mAdapter2;
-    private List<Upload> mUploads2;
-    private DatabaseReference mDatabaseRef2;
+    private ImageAdapter mAdapter3;
 
+    private List<Upload> mUploads2;
+    private List<Upload> mUploads3;
+
+    private DatabaseReference mDatabaseRef2;
+    private DatabaseReference mDatabaseRef3;
 
     private RecyclerView mRecyclerView3;
 
@@ -158,23 +162,23 @@ public class home_activity extends AppCompatActivity implements ImageAdapter.OnI
 
 
         //3dr all section
-        mUploads2 = new ArrayList<>();
-        mDatabaseRef2 = FirebaseDatabase.getInstance().getReference("classic");
+        mUploads3 = new ArrayList<>();
+        mDatabaseRef3 = FirebaseDatabase.getInstance().getReference("all");
 
-        mDatabaseRef2.addValueEventListener(new ValueEventListener() {
+        mDatabaseRef3.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 for (DataSnapshot postSnapshot : dataSnapshot.getChildren()) {
 
                     Upload upload = postSnapshot.getValue(Upload.class);
-                    mUploads.add(upload);
+                    mUploads3.add(upload);
                 }
 
-                mAdapter2 = new ImageAdapter(home_activity.this, mUploads);
+                mAdapter3 = new ImageAdapter(home_activity.this, mUploads3);
 
-                mRecyclerView3.setAdapter(mAdapter2);
+                mRecyclerView3.setAdapter(mAdapter3);
 
-                mAdapter2.setOnItemClickListener(home_activity.this);
+                mAdapter3.setOnItemClickListener(home_activity.this);
             }
 
             @Override
