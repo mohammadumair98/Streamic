@@ -37,7 +37,7 @@ public class video_player_activity extends AppCompatActivity {
 
     SimpleExoPlayerView exoPlayerView;
     SimpleExoPlayer exoPlayer;
-    String videourl ="https://firebasestorage.googleapis.com/v0/b/video5-e02ef.appspot.com/o/Knock.Knock.2015.720p.BluRay.x264.YIFY.mp4?alt=media&token=b00a352d-a2d2-4fd9-a97c-9a45bcdefa76";
+    String videourl ="https://firebasestorage.googleapis.com/v0/b/cine-duniya.appspot.com/o/y2mate.com%20-%20my%20story%20__%20Heart%20touching%20Kannada%20album%20song%20__%20khaseem%20Ali%20__%20Redwind%20productions_R5WddbpnoV0_1080p.mp4?alt=media&token=01aa3fa4-571d-4520-84c8-8f751311e401";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

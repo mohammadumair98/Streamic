@@ -9,11 +9,50 @@
     android:background="@color/colorPrimary">
 
     <LinearLayout
+        android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="300dp">
 
+        <ViewFlipper
+            android:id="@+id/viewflipper"
+            android:flipInterval="2000"
+            android:layout_width="match_parent"
+            android:autoStart="true"
+            android:layout_height="300dp">
+
+            <ImageView
+            android:scaleType="centerCrop"
+            android:id="@+id/viewflipperImage1"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"/>
+
+            <ImageView
+                android:scaleType="centerCrop"
+                android:id="@+id/viewflipperImage2"
+                android:layout_width="match_parent"
+                android:layout_height="300dp"/>
+
+            <ImageView
+                android:scaleType="centerCrop"
+                android:id="@+id/viewflipperImage3"
+                android:layout_width="match_parent"
+                android:layout_height="300dp"/>
+
+            <ImageView
+                android:scaleType="centerCrop"
+                android:id="@+id/viewflipperImage4"
+                android:layout_width="match_parent"
+                android:layout_height="300dp"/>
+        </ViewFlipper>
     </LinearLayout>
 
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_height="wrap_content">
     <LinearLayout
         android:orientation="horizontal"
         android:layout_width="match_parent"
@@ -74,5 +113,36 @@
             android:background="@color/colorPrimary"
             android:scrollbars="horizontal" />
     </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="36dp"
+            android:background="#2B2B2B">
+
+            <TextView
+                android:id="@+id/textViewall"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center_horizontal|center_vertical"
+                android:text="ALL MOVIES"
+                android:textColor="@android:color/background_light"
+                android:textSize="18sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recycler_view_all"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="-2dp"
+                android:background="@color/colorPrimary"
+                android:scrollbars="horizontal" />
+        </LinearLayout>
+</LinearLayout>
+    </ScrollView>
 
 </LinearLayout>
