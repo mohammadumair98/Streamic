@@ -9,7 +9,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".forgot_password_activity"></activity>
+        <activity android:name=".Favourite_activity"></activity>
+        <activity android:name=".Account_activity" />
+        <activity
+            android:name=".video_player_activity"
+            android:screenOrientation="landscape"
+            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar" />
+        <activity android:name=".forgot_password_activity" />
         <activity android:name=".SignUp_activity" />
         <activity android:name=".home_activity" />
         <activity android:name=".Login_activity" />

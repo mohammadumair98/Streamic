@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/favorite"
+        android:icon="@drawable/ic_favorite_black_24dp"
+        android:title="Cart"
+        app:showAsAction="always"
+        />
+
+    <item
+        android:id="@+id/extras"
+        android:icon="@drawable/ic_person_black_24dp"
+        android:title="extras"
+        />
+
+    <item
+        android:id="@+id/account"
+        android:icon="@drawable/ic_account_circle_black_24dp"
+        android:title="Account"
+        app:showAsAction="always"/>
+
+
+
+</menu>
