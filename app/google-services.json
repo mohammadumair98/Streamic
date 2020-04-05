@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "382164913239",
+    "firebase_url": "https://cine-duniya.firebaseio.com",
+    "project_id": "cine-duniya",
+    "storage_bucket": "cine-duniya.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:382164913239:android:1aed21106aaa811c68a712",
+        "android_client_info": {
+          "package_name": "com.args.cineduniya"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "382164913239-co3as2qao9qfkj7na4n84big41o1p2k8.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.args.cineduniya",
+            "certificate_hash": "eadc48c368b05180b4ba6b4603b47bb3e8c6e2ed"
+          }
+        },
+        {
+          "client_id": "382164913239-55mu748nfo882kq6mrbo73a6s63g2usa.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBM0NxHGHnrVMZGbTYbV_bSypT9K2GFcwE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "382164913239-55mu748nfo882kq6mrbo73a6s63g2usa.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
