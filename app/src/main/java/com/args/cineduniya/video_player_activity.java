@@ -2,12 +2,16 @@ package com.args.cineduniya;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
+import android.preference.PreferenceManager;
 import android.util.Log;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.TextView;
 
 import com.google.android.exoplayer2.DefaultLoadControl;
 import com.google.android.exoplayer2.DefaultRenderersFactory;
@@ -37,7 +41,8 @@ public class video_player_activity extends AppCompatActivity {
 
     SimpleExoPlayerView exoPlayerView;
     SimpleExoPlayer exoPlayer;
-    String videourl ="https://firebasestorage.googleapis.com/v0/b/cine-duniya.appspot.com/o/y2mate.com%20-%20my%20story%20__%20Heart%20touching%20Kannada%20album%20song%20__%20khaseem%20Ali%20__%20Redwind%20productions_R5WddbpnoV0_1080p.mp4?alt=media&token=01aa3fa4-571d-4520-84c8-8f751311e401";
+    String videourl ;
+    TextView textView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -46,11 +51,17 @@ public class video_player_activity extends AppCompatActivity {
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_video_player_activity);
 
+        //textView = findViewById(R.id.textView2);
+
+        //textView.setText(videourl);
+
+
         exoPlayerView = (SimpleExoPlayerView)findViewById(R.id.video_view);
         try {
             BandwidthMeter bandwidthMeter = new DefaultBandwidthMeter();
             TrackSelector trackSelector = new DefaultTrackSelector(new AdaptiveTrackSelection.Factory(bandwidthMeter));
             exoPlayer = ExoPlayerFactory.newSimpleInstance(this,trackSelector);
+            videourl = getIntent().getExtras().getString("message");
             Uri videouri = Uri.parse(videourl);
             DefaultHttpDataSourceFactory dataSourceFactory = new DefaultHttpDataSourceFactory("exoplayer_video");
             ExtractorsFactory extractorsFactory = new DefaultExtractorsFactory();

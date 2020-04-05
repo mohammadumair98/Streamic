@@ -13,8 +13,10 @@ import com.google.firebase.database.FirebaseDatabase;
 public class upload_activity extends AppCompatActivity {
 
     EditText url;
+    EditText vid_url;
     Button upload_btn;
     DatabaseReference databaseReference;
+    DatabaseReference databaseReference1;
     FirebaseDatabase database;
     Upload upload;
 
@@ -24,11 +26,13 @@ public class upload_activity extends AppCompatActivity {
         setContentView(R.layout.activity_upload_activity);
 
         url = findViewById(R.id.editText_url);
+        vid_url = findViewById(R.id.editText_vid_url);
         upload_btn = findViewById(R.id.button);
 
         upload = new Upload();
 
-        databaseReference = FirebaseDatabase.getInstance().getReference().child("classic");
+        databaseReference = FirebaseDatabase.getInstance().getReference().child("latest");
+        databaseReference1 = FirebaseDatabase.getInstance().getReference().child("all");
 
 
         upload_btn.setOnClickListener(new View.OnClickListener() {
@@ -36,10 +40,14 @@ public class upload_activity extends AppCompatActivity {
             public void onClick(View v) {
 
                 String url_image = url.toString();
+                String vidio_url = vid_url.toString();
 
                 upload.setmImageUrl(url_image);
+                upload.setmName(vidio_url);
 
                 databaseReference.push().setValue(upload);
+                databaseReference1.push().setValue(upload);
+
 
             }
         });

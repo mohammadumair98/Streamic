@@ -26,6 +26,7 @@ public class ImageAdapter extends RecyclerView.Adapter<ImageAdapter.ImageViewHol
     private OnItemClickListener mListener;
 
 
+
     //to display the product images to home activity
     //this works has an adapted between the app and the firebase
 
@@ -47,6 +48,7 @@ public class ImageAdapter extends RecyclerView.Adapter<ImageAdapter.ImageViewHol
     @Override
     public void onBindViewHolder(@NonNull ImageViewHolder holder, int position) {
         Upload uploadCusrrent = muploads.get(position);
+        //url for text name
         holder.textViewName.setText(uploadCusrrent.getmName());
         Picasso.get()
                 .load(uploadCusrrent.getmImageUrl())
@@ -62,7 +64,7 @@ public class ImageAdapter extends RecyclerView.Adapter<ImageAdapter.ImageViewHol
     }
 
     public class ImageViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener,
-            View.OnCreateContextMenuListener , MenuItem.OnMenuItemClickListener{
+            View.OnCreateContextMenuListener {
         public ImageView imageView;
         public LinearLayout vid_play;
         public TextView textViewName;
@@ -76,72 +78,38 @@ public class ImageAdapter extends RecyclerView.Adapter<ImageAdapter.ImageViewHol
             vid_play = itemView.findViewById(R.id.onclick_linear);
             textViewName = itemView.findViewById(R.id.textview_name);
 
-
-            imageView.setOnClickListener(this);
-
-
-
+            itemView.setOnClickListener(this);
+            itemView.setOnCreateContextMenuListener(this);
 
         }
 
-
         @Override
         public void onClick(View v) {
+            if(mListener != null){
+                int position = getAdapterPosition();
+                if(position != RecyclerView.NO_POSITION){
 
-            // to handle clicks
-            if (mListener != null) {
-                final int position = getAdapterPosition();
-                if (position != RecyclerView.NO_POSITION) {
-
-                    mListener.OnItemClick(position);
-
-                    imageView.setOnClickListener(new View.OnClickListener() {
-                        @Override
-                        public void onClick(View v) {
-
-
-                            String video_url= textViewName.getText().toString();
-                            mListener.place_order(position,video_url);
-
-
-                        }
-                    });
-
-
-
-
-
+                    String vid_url = textViewName.getText().toString();
+                    mListener . OnItemClick(vid_url);
                 }
             }
-
-
         }
 
         @Override
         public void onCreateContextMenu(ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo) {
 
         }
-
-        @Override
-        public boolean onMenuItemClick(MenuItem item) {
-            return false;
-        }
     }
 
-        //items
-        public interface OnItemClickListener {
 
 
-            //to send the data to the home activity...
-            void place_order(int position, String url);
+    public interface OnItemClickListener{
+        void OnItemClick(String url);
+    }
 
+    public void setOnItemClickListener(OnItemClickListener listener)
+    {
+        mListener = listener;
 
-            void OnItemClick(int position);
-        }
-
-        public void setOnItemClickListener(OnItemClickListener listener)
-            {
-
-            mListener = listener;
     }
 }

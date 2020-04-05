@@ -7,12 +7,14 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
@@ -51,6 +53,9 @@ public class home_activity extends AppCompatActivity implements ImageAdapter.OnI
     private RecyclerView mRecyclerView3;
 
 
+
+
+
     //for slide show
     private ImageView imageView1,imageView2,imageView3,imageView4;
     FirebaseFirestore db = FirebaseFirestore.getInstance();
@@ -70,9 +75,12 @@ public class home_activity extends AppCompatActivity implements ImageAdapter.OnI
         imageView3 = findViewById(R.id.viewflipperImage3);
         imageView4 = findViewById(R.id.viewflipperImage4);
 
+
+
+
         update();
         mRecyclerView.setHasFixedSize(true);
-        mRecyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
+        mRecyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL,false));
 
 
         //2nd recycler view
@@ -105,6 +113,8 @@ public class home_activity extends AppCompatActivity implements ImageAdapter.OnI
 
                 mRecyclerView.setAdapter(mAdapter);
 
+                mAdapter.setOnItemClickListener(home_activity.this);
+
             }
 
             @Override
@@ -116,6 +126,8 @@ public class home_activity extends AppCompatActivity implements ImageAdapter.OnI
 
         });
 
+
+        //2nd list
         mUploads2 = new ArrayList<>();
         mDatabaseRef2 = FirebaseDatabase.getInstance().getReference("classic");
 
@@ -132,6 +144,7 @@ public class home_activity extends AppCompatActivity implements ImageAdapter.OnI
 
                 mRecyclerView2.setAdapter(mAdapter2);
 
+                mAdapter2.setOnItemClickListener(home_activity.this);
             }
 
             @Override
@@ -161,6 +174,7 @@ public class home_activity extends AppCompatActivity implements ImageAdapter.OnI
 
                 mRecyclerView3.setAdapter(mAdapter2);
 
+                mAdapter2.setOnItemClickListener(home_activity.this);
             }
 
             @Override
@@ -202,7 +216,7 @@ public class home_activity extends AppCompatActivity implements ImageAdapter.OnI
                 return true;
 
             case R.id.extras:
-                Intent up = new Intent(home_activity.this, video_player_activity.class);
+                Intent up = new Intent(home_activity.this, upload_activity.class);
                 startActivity(up);
                 return true;
 
@@ -214,17 +228,7 @@ public class home_activity extends AppCompatActivity implements ImageAdapter.OnI
         }
     }
 
-    @Override
-    public void place_order(int position, String vid_url) {
-        Toast.makeText(this, ""+vid_url, Toast.LENGTH_SHORT).show();
-        Intent video = new Intent(home_activity.this,video_player_activity.class);
-        startActivity(video);
-    }
 
-    @Override
-    public void OnItemClick(int position) {
-        Toast.makeText(this, ""+position, Toast.LENGTH_SHORT).show();
-    }
 
 
     //for slideshow
@@ -272,4 +276,15 @@ public class home_activity extends AppCompatActivity implements ImageAdapter.OnI
         });
     }
 
+
+    //when an movie is clicked
+    @Override
+    public void OnItemClick(String video_url) {
+        Toast.makeText(this, ""+video_url, Toast.LENGTH_SHORT).show();
+
+        Intent vid = new Intent(home_activity.this,video_player_activity.class);
+        String message = video_url;
+        vid.putExtra("message",message);
+        startActivity(vid);
+    }
 }
