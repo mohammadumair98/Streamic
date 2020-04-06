@@ -16,6 +16,7 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -57,6 +58,7 @@ public class home_activity extends AppCompatActivity implements ImageAdapter.OnI
     private RecyclerView mRecyclerView3;
 
 
+    TextView categories;
 
 
 
@@ -80,6 +82,8 @@ public class home_activity extends AppCompatActivity implements ImageAdapter.OnI
         imageView4 = findViewById(R.id.viewflipperImage4);
 
 
+        //for categories tab
+        categories = findViewById(R.id.go_categories);
 
 
         update();
@@ -188,6 +192,17 @@ public class home_activity extends AppCompatActivity implements ImageAdapter.OnI
             }
 
 
+        });
+
+
+        //for going to categories tab
+        categories.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent category = new Intent(home_activity.this,Categories_activity.class);
+                startActivity(category);
+                finish();
+            }
         });
     }
 

@@ -17,7 +17,7 @@
         <ImageView
             android:id="@+id/movie_banner"
             android:layout_width="match_parent"
-            android:layout_height="200dp"/>
+            android:layout_height="250dp"/>
     </LinearLayout>
 
     <LinearLayout
@@ -113,16 +113,24 @@
         android:orientation="vertical">
 
         <Button
+            android:padding="10dp"
+            android:drawableLeft="@drawable/ic_play_arrow_black_24dp"
+            android:drawablePadding="20dp"
+            android:textStyle="bold"
             android:id="@+id/play_movie_description"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
-            android:background="#8499b2"
+            android:background="#146EB4"
             android:text="Play Movie"
-            android:textColor="@color/colorPrimary" />
+            android:textColor="#fff" />
 
         <Button
+            android:padding="10dp"
+            android:drawableLeft="@drawable/ic_video_library_black_24dp"
+            android:drawablePadding="20dp"
+            android:textStyle="bold"
             android:id="@+id/movie_trailer_description"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -130,9 +138,9 @@
             android:layout_marginTop="10dp"
             android:layout_marginRight="20dp"
             android:layout_marginBottom="20dp"
-            android:background="#8499b2"
+            android:background="#146EB4"
             android:text="Play trailer"
-            android:textColor="@color/colorPrimaryDark" />
+            android:textColor="#fff" />
     </LinearLayout>
 
     <LinearLayout

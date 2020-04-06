@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary"
+    tools:context=".Categories_activity">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:background="#146EB4"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="50dp">
+            <TextView
+                android:id="@+id/gohomecategory"
+                android:gravity="center"
+                android:layout_marginRight="20dp"
+                android:textSize="16dp"
+                android:textStyle="bold"
+                android:text="HOME"
+
+                android:textColor="#fff"
+                android:layout_width="75dp"
+                android:layout_height="35dp"></TextView>
+
+            <TextView
+                android:gravity="center"
+                android:background="@drawable/edittext"
+                android:layout_marginLeft="20dp"
+                android:textSize="16dp"
+                android:textStyle="bold"
+                android:text="CATEGORIES"
+                android:textColor="@color/colorPrimary"
+                android:layout_width="110dp"
+                android:layout_height="35dp"></TextView>
+        </LinearLayout>
+    </LinearLayout>
+
+</ScrollView>
