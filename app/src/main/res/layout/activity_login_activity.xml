@@ -14,7 +14,10 @@
         android:orientation="vertical"
         android:layout_gravity="top">
 
-
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            app:srcCompat="@drawable/logo" />
 
         <TextView
             android:layout_width="wrap_content"

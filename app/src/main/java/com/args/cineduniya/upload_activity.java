@@ -33,7 +33,7 @@ public class upload_activity extends AppCompatActivity {
 
         upload = new Upload();
 
-        databaseReference = FirebaseDatabase.getInstance().getReference().child("classic");
+        databaseReference = FirebaseDatabase.getInstance().getReference().child("latest");
         databaseReference1 = FirebaseDatabase.getInstance().getReference().child("all");
 
 

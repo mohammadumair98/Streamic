@@ -219,10 +219,7 @@ public class home_activity extends AppCompatActivity implements ImageAdapter.OnI
                 startActivity(about);
                 return true;
 
-            case R.id.extras:
-                Intent up = new Intent(home_activity.this, upload_activity.class);
-                startActivity(up);
-                return true;
+
 
 
             default:
@@ -283,12 +280,16 @@ public class home_activity extends AppCompatActivity implements ImageAdapter.OnI
 
     //when an movie is clicked
     @Override
-    public void OnItemClick(String video_url,String movie_name,String poster_url, String banner_url, String Description) {
-        //Toast.makeText(this, ""+video_url, Toast.LENGTH_SHORT).show();
+    public void OnItemClick(String video_url,String movie_name,String poster_url, String banner_url, String Description,Float rating,Float release_year, String trailer_url) {
+        //Toast.makeText(this, ""+trailer_url, Toast.LENGTH_SHORT).show();
 
-        //Toast.makeText(this, ""+Description, Toast.LENGTH_SHORT).show();
+        //Toast.makeText(this, ""+release_year, Toast.LENGTH_SHORT).show();
         Intent vid = new Intent(home_activity.this,Description_activity.class);
         String message = video_url;
+        String trailer = trailer_url;
+        vid.putExtra("trailer",trailer);
+        vid.putExtra("release",release_year);
+        vid.putExtra("rating",rating);
         vid.putExtra("banner",banner_url);
         vid.putExtra("poster",poster_url);
         vid.putExtra("message",message);

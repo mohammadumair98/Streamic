@@ -2,11 +2,14 @@ package com.args.cineduniya;
 
 public class Upload {
 
-    private String mName;
+    private String mName;//movie code
     private String mImageUrl;
     private String mposterurl;
     private String movie_name;
     private String description;
+    private String trailer;
+    private Float rating;
+    private Float release_year;
     private int mRate;
 
     // for the image adapter to display the images from firebase
@@ -72,5 +75,29 @@ public class Upload {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public Float getRating() {
+        return rating;
+    }
+
+    public void setRating(Float rating) {
+        this.rating = rating;
+    }
+
+    public Float getRelease_year() {
+        return release_year;
+    }
+
+    public void setRelease_year(Float release_year) {
+        this.release_year = release_year;
+    }
+
+    public String getTrailer() {
+        return trailer;
+    }
+
+    public void setTrailer(String trailer) {
+        this.trailer = trailer;
     }
 }

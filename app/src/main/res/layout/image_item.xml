@@ -60,6 +60,31 @@
             android:background="@color/colorPrimary"
             android:text="TextView"
             android:textColor="@color/colorPrimary" />
+        <TextView
+            android:id="@+id/textview_rating"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_weight="1"
+            android:background="@color/colorPrimary"
+            android:text="TextView"
+            android:textColor="@color/colorPrimary" />
+        <TextView
+            android:id="@+id/textview_release_year"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_weight="1"
+            android:background="@color/colorPrimary"
+            android:text="TextView"
+            android:textColor="@color/colorPrimary" />
+
+        <TextView
+            android:id="@+id/textview_trailer"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_weight="1"
+            android:background="@color/colorPrimary"
+            android:text="TextView"
+            android:textColor="@color/colorPrimary" />
 
     </LinearLayout>
 </androidx.cardview.widget.CardView>

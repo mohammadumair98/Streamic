@@ -26,7 +26,7 @@ import java.util.List;
 public class Description_activity extends AppCompatActivity implements ImageAdapter.OnItemClickListener {
 
     ImageView banner, poster;
-    TextView movie_name,description;
+    TextView movie_name,description,rating_of_movie,release_year;
     Button movie_play,trailer_play;
     RecyclerView mRecyclerViewdescription;
     private DatabaseReference mDatabaseRef;
@@ -43,11 +43,16 @@ public class Description_activity extends AppCompatActivity implements ImageAdap
         description = findViewById(R.id.movie_description_description);
         movie_play = findViewById(R.id.play_movie_description);
         trailer_play = findViewById(R.id.movie_trailer_description);
+        rating_of_movie = findViewById(R.id.rating_description);
+        release_year = findViewById(R.id.release_description);
+
         mRecyclerViewdescription = findViewById(R.id.recycler_view_description);
         //for getting the movie name
         movie_name.setText(getIntent().getExtras().getString("movie_name"));
         //for retreiving movie url
         final String videourl = getIntent().getExtras().getString("message");
+        //for retreiving trailer_url
+        final String trailer_url = getIntent().getExtras().getString("trailer");
         //for retreiving poster url
         String poster_url = getIntent().getExtras().getString("poster");
         //for loading the banner url
@@ -55,6 +60,12 @@ public class Description_activity extends AppCompatActivity implements ImageAdap
 
         //for loading description
         description.setText(getIntent().getExtras().getString("description"));
+
+        //for loading description
+        rating_of_movie.setText(""+(int) getIntent().getExtras().getFloat("rating")+"/5");
+
+        //release date of the movie
+        release_year.setText(""+(int) getIntent().getExtras().getFloat("release"));
         //picasso for loading banner
         Picasso.get()
                 .load(banner_url)
@@ -81,13 +92,24 @@ public class Description_activity extends AppCompatActivity implements ImageAdap
             }
         });
 
+        trailer_play.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent play_movie = new Intent(Description_activity.this,video_player_activity.class);
+                String name_of_movie = movie_name.getText().toString();
+                play_movie.putExtra("movie_name",name_of_movie);
+                play_movie.putExtra("message",trailer_url);
+                startActivity(play_movie);
+            }
+        });
+
 
 
         mRecyclerViewdescription.setHasFixedSize(true);
         mRecyclerViewdescription.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL,false));
 
         mUploads = new ArrayList<>();
-        mDatabaseRef = FirebaseDatabase.getInstance().getReference("latest");
+        mDatabaseRef = FirebaseDatabase.getInstance().getReference("all");
 
 
 
@@ -123,9 +145,12 @@ public class Description_activity extends AppCompatActivity implements ImageAdap
     }
 
     @Override
-    public void OnItemClick(String video_url,String movie_name,String poster_url, String banner_url, String Description) {
+    public void OnItemClick(String video_url,String movie_name,String poster_url, String banner_url, String Description,Float rating,Float release_year,String trailer) {
         Intent vid = new Intent(Description_activity.this,Description_activity.class);
         String message = video_url;
+        vid.putExtra("trailer",trailer);
+        vid.putExtra("release",release_year);
+        vid.putExtra("rating",rating);
         vid.putExtra("banner",banner_url);
         vid.putExtra("poster",poster_url);
         vid.putExtra("message",message);
