@@ -14,6 +14,7 @@ public class upload_activity extends AppCompatActivity {
 
     EditText url;
     EditText vid_url;
+    EditText movie_name;
     Button upload_btn;
     DatabaseReference databaseReference;
     DatabaseReference databaseReference1;
@@ -28,6 +29,7 @@ public class upload_activity extends AppCompatActivity {
         url = findViewById(R.id.editText_url);
         vid_url = findViewById(R.id.editText_vid_url);
         upload_btn = findViewById(R.id.button);
+        movie_name = findViewById(R.id.editText_movie_name);
 
         upload = new Upload();
 
@@ -41,9 +43,11 @@ public class upload_activity extends AppCompatActivity {
 
                 String url_image = url.toString();
                 String vidio_url = vid_url.toString();
+                String movie_name_store = movie_name.toString();
 
                 upload.setmImageUrl(url_image);
                 upload.setmName(vidio_url);
+                upload.setMovie_name(movie_name_store);
 
                 databaseReference.push().setValue(upload);
                 databaseReference1.push().setValue(upload);

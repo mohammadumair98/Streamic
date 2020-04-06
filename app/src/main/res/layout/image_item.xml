@@ -25,5 +25,41 @@
             android:text="TextView"
             android:textColor="@color/colorPrimary" />
 
+        <TextView
+            android:id="@+id/textview_name2"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_weight="1"
+            android:background="@color/colorPrimary"
+            android:text="TextView"
+            android:textColor="@color/colorPrimary" />
+
+        <TextView
+            android:id="@+id/textview_imageurl"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_weight="1"
+            android:background="@color/colorPrimary"
+            android:text="TextView"
+            android:textColor="@color/colorPrimary" />
+
+        <TextView
+            android:id="@+id/textview_banner_url"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_weight="1"
+            android:background="@color/colorPrimary"
+            android:text="TextView"
+            android:textColor="@color/colorPrimary" />
+
+        <TextView
+            android:id="@+id/textview_description"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_weight="1"
+            android:background="@color/colorPrimary"
+            android:text="TextView"
+            android:textColor="@color/colorPrimary" />
+
     </LinearLayout>
 </androidx.cardview.widget.CardView>

@@ -2,6 +2,7 @@ package com.args.cineduniya;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.ActionBar;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.net.Uri;
@@ -9,6 +10,7 @@ import android.os.Bundle;
 import android.os.Environment;
 import android.preference.PreferenceManager;
 import android.util.Log;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
@@ -49,6 +51,7 @@ public class video_player_activity extends AppCompatActivity {
     SimpleExoPlayer exoPlayer;
     String videourl ;
     TextView textView;
+    TextView display_movie_name;
     ProgressBar progressBar;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,10 +62,10 @@ public class video_player_activity extends AppCompatActivity {
         setContentView(R.layout.activity_video_player_activity);
         progressBar = findViewById(R.id.progressBar2);
 
-        //textView = findViewById(R.id.textView2);
 
-        //textView.setText(videourl);
-
+        display_movie_name = findViewById(R.id.textView_movie_name_vid_player);
+        display_movie_name.setText(getIntent().getExtras().getString("movie_name"));
+        display_movie_name.setVisibility(View.VISIBLE);
 
         progressBar.setVisibility(View.VISIBLE);
 
@@ -91,6 +94,7 @@ public class video_player_activity extends AppCompatActivity {
             Log.e ("videoactivity", "exoplayer error" + e.toString());
         }
 
+
         exoPlayer.addListener(new ExoPlayer.EventListener() {
             @Override
             public void onTimelineChanged(Timeline timeline, Object manifest, int reason) {
@@ -112,8 +116,10 @@ public class video_player_activity extends AppCompatActivity {
 
                 if (playbackState == ExoPlayer.STATE_BUFFERING){
                     progressBar.setVisibility(View.VISIBLE);
+                    display_movie_name.setVisibility(View.VISIBLE);
                 } else {
                     progressBar.setVisibility(View.INVISIBLE);
+                    display_movie_name.setVisibility(View.GONE);
                 }
             }
 
@@ -148,12 +154,17 @@ public class video_player_activity extends AppCompatActivity {
             @Override
             public void onSeekProcessed() {
 
+                display_movie_name.setVisibility(View.VISIBLE);
             }
         });
 
 
 
+
+
     }
+
+
 
     @Override
     public void onBackPressed() {

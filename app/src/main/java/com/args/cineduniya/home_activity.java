@@ -283,12 +283,18 @@ public class home_activity extends AppCompatActivity implements ImageAdapter.OnI
 
     //when an movie is clicked
     @Override
-    public void OnItemClick(String video_url) {
-        Toast.makeText(this, ""+video_url, Toast.LENGTH_SHORT).show();
+    public void OnItemClick(String video_url,String movie_name,String poster_url, String banner_url, String Description) {
+        //Toast.makeText(this, ""+video_url, Toast.LENGTH_SHORT).show();
 
-        Intent vid = new Intent(home_activity.this,video_player_activity.class);
+        //Toast.makeText(this, ""+Description, Toast.LENGTH_SHORT).show();
+        Intent vid = new Intent(home_activity.this,Description_activity.class);
         String message = video_url;
+        vid.putExtra("banner",banner_url);
+        vid.putExtra("poster",poster_url);
         vid.putExtra("message",message);
+        vid.putExtra("description",Description);
+        String name_of_movie = movie_name;
+        vid.putExtra("movie_name",name_of_movie);
         startActivity(vid);
     }
 }

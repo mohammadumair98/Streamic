@@ -50,6 +50,14 @@ public class ImageAdapter extends RecyclerView.Adapter<ImageAdapter.ImageViewHol
         Upload uploadCusrrent = muploads.get(position);
         //url for text name
         holder.textViewName.setText(uploadCusrrent.getmName());
+        //for movie name
+        holder.textViewName_movie_name.setText(uploadCusrrent.getMovie_name());
+        //for movie poster
+        holder.textView_url_of_image.setText(uploadCusrrent.getmImageUrl());
+        //for movie banner
+        holder.Textview_banner_url.setText(uploadCusrrent.getMposterurl());
+        //for movie description
+        holder.TextView_description.setText(uploadCusrrent.getDescription());
         Picasso.get()
                 .load(uploadCusrrent.getmImageUrl())
                 .fit()
@@ -68,6 +76,7 @@ public class ImageAdapter extends RecyclerView.Adapter<ImageAdapter.ImageViewHol
         public ImageView imageView;
         public LinearLayout vid_play;
         public TextView textViewName;
+        public TextView textViewName_movie_name,textView_url_of_image,Textview_banner_url,TextView_description;
 
 
         public ImageViewHolder(View itemView) {
@@ -77,6 +86,11 @@ public class ImageAdapter extends RecyclerView.Adapter<ImageAdapter.ImageViewHol
             imageView = itemView.findViewById(R.id.image_view_upload);
             vid_play = itemView.findViewById(R.id.onclick_linear);
             textViewName = itemView.findViewById(R.id.textview_name);
+            textViewName_movie_name = itemView.findViewById(R.id.textview_name2);
+            textView_url_of_image = itemView.findViewById(R.id.textview_imageurl);
+            Textview_banner_url = itemView.findViewById(R.id.textview_banner_url);
+            TextView_description = itemView.findViewById(R.id.textview_description);
+
 
             itemView.setOnClickListener(this);
             itemView.setOnCreateContextMenuListener(this);
@@ -89,8 +103,13 @@ public class ImageAdapter extends RecyclerView.Adapter<ImageAdapter.ImageViewHol
                 int position = getAdapterPosition();
                 if(position != RecyclerView.NO_POSITION){
 
+
                     String vid_url = textViewName.getText().toString();
-                    mListener . OnItemClick(vid_url);
+                    String vid_name = textViewName_movie_name.getText().toString();
+                    String poster_url = textView_url_of_image.getText().toString();
+                    String banner_url = Textview_banner_url.getText().toString();
+                    String Description = TextView_description.getText().toString();
+                    mListener . OnItemClick(vid_url,vid_name,poster_url,banner_url,Description);
                 }
             }
         }
@@ -104,7 +123,7 @@ public class ImageAdapter extends RecyclerView.Adapter<ImageAdapter.ImageViewHol
 
 
     public interface OnItemClickListener{
-        void OnItemClick(String url);
+        void OnItemClick(String url,String mov_name,String poster_url, String banner_url, String description);
     }
 
     public void setOnItemClickListener(OnItemClickListener listener)

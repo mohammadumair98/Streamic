@@ -12,8 +12,8 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="84dp"
         android:ems="10"
+        android:hint="movie banner url"
         android:inputType="textPersonName"
-        android:hint="movie name"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -26,7 +26,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText_vid_url" />
+        app:layout_constraintTop_toBottomOf="@+id/editText_movie_name" />
 
     <EditText
         android:id="@+id/editText_vid_url"
@@ -39,4 +39,16 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editText_url" />
+
+    <EditText
+        android:id="@+id/editText_movie_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="36dp"
+        android:ems="10"
+        android:hint="movie_name"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editText_vid_url" />
 </androidx.constraintlayout.widget.ConstraintLayout>

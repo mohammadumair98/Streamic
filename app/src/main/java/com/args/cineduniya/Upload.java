@@ -4,6 +4,9 @@ public class Upload {
 
     private String mName;
     private String mImageUrl;
+    private String mposterurl;
+    private String movie_name;
+    private String description;
     private int mRate;
 
     // for the image adapter to display the images from firebase
@@ -45,5 +48,29 @@ public class Upload {
 
     public void setmRate(int rate) {
         this.mRate = rate;
+    }
+
+    public String getMovie_name() {
+        return movie_name;
+    }
+
+    public void setMovie_name(String movie_name) {
+        this.movie_name = movie_name;
+    }
+
+    public String getMposterurl() {
+        return mposterurl;
+    }
+
+    public void setMposterurl(String mposterurl) {
+        this.mposterurl = mposterurl;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 }
