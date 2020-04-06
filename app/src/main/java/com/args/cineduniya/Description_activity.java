@@ -58,6 +58,11 @@ public class Description_activity extends AppCompatActivity implements ImageAdap
         //for loading the banner url
         String banner_url = getIntent().getExtras().getString("banner");
 
+        Picasso.get()
+                .load(banner_url)
+                .fit()
+                .centerCrop()
+                .into(banner);
         //for loading description
         description.setText(getIntent().getExtras().getString("description"));
 
@@ -67,11 +72,7 @@ public class Description_activity extends AppCompatActivity implements ImageAdap
         //release date of the movie
         release_year.setText(""+(int) getIntent().getExtras().getFloat("release"));
         //picasso for loading banner
-        Picasso.get()
-                .load(banner_url)
-                .fit()
-                .centerCrop()
-                .into(banner);
+
 
 
         //picasso for loading poster

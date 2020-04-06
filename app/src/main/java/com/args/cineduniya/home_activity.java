@@ -234,6 +234,10 @@ public class home_activity extends AppCompatActivity implements ImageAdapter.OnI
                 startActivity(about);
                 return true;
 
+            case R.id.privacy_policy://when about is clicked
+                Intent pripol = new Intent(home_activity.this, PrivacyPolicy_activity.class);
+                startActivity(pripol);
+                return true;
 
 
 

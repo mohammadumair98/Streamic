@@ -4,14 +4,14 @@
     <item
         android:id="@+id/favorite"
         android:icon="@drawable/ic_favorite_black_24dp"
-        android:title="Cart"
+        android:title="favourites"
         app:showAsAction="always"
         />
 
     <item
-        android:id="@+id/extras"
+        android:id="@+id/privacy_policy"
         android:icon="@drawable/ic_person_black_24dp"
-        android:title="extras"
+        android:title="Privacy Policy"
         />
 
     <item
