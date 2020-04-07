@@ -9,29 +9,23 @@ import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.ProgressBar;
 
-public class PrivacyPolicy_activity extends AppCompatActivity {
+public class About_activity extends AppCompatActivity {
 
-    WebView privacy_policy;
-
+    WebView webView;
     ProgressBar progressBar;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_privacy_policy_activity);
+        setContentView(R.layout.activity_about_activity);
 
-        privacy_policy = findViewById(R.id.privacy);
-        progressBar = findViewById(R.id.progressBarprivacy);
-
-
-
-        privacy_policy.setWebViewClient(new WebViewClient()
+        webView= findViewById(R.id.about_webview);
+        progressBar = findViewById(R.id.progressBarwebabout);
+        webView.setWebViewClient(new WebViewClient()
         {
             //when web view starts loading
             @Override
             public void onPageStarted(WebView view, String url, Bitmap favicon) {
                 progressBar.setVisibility(View.VISIBLE);
-
                 super.onPageStarted(view, url, favicon);
             }
 
@@ -41,9 +35,7 @@ public class PrivacyPolicy_activity extends AppCompatActivity {
                 super.onPageFinished(view, url);
             }
         });
-        privacy_policy.loadUrl("https://streamicmedia.web.app/privacy.html");
-
-
+        webView.loadUrl("https://streamicmedia.web.app/about.html");
     }
 
     @Override

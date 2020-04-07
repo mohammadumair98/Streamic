@@ -59,6 +59,7 @@ public class home_activity extends AppCompatActivity implements ImageAdapter.OnI
 
 
     TextView categories;
+    ProgressBar progressBar;
 
 
 
@@ -85,7 +86,10 @@ public class home_activity extends AppCompatActivity implements ImageAdapter.OnI
         //for categories tab
         categories = findViewById(R.id.go_categories);
 
+        progressBar= findViewById(R.id.progressBarhome);
 
+
+        progressBar.setVisibility(View.VISIBLE);
         update();
         mRecyclerView.setHasFixedSize(true);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL,false));
@@ -122,6 +126,8 @@ public class home_activity extends AppCompatActivity implements ImageAdapter.OnI
                 mRecyclerView.setAdapter(mAdapter);
 
                 mAdapter.setOnItemClickListener(home_activity.this);
+
+
 
             }
 
@@ -183,6 +189,7 @@ public class home_activity extends AppCompatActivity implements ImageAdapter.OnI
                 mRecyclerView3.setAdapter(mAdapter3);
 
                 mAdapter3.setOnItemClickListener(home_activity.this);
+                progressBar.setVisibility(View.GONE);
             }
 
             @Override
@@ -239,6 +246,10 @@ public class home_activity extends AppCompatActivity implements ImageAdapter.OnI
                 startActivity(pripol);
                 return true;
 
+            case R.id.about_us:
+                Intent about_2 = new Intent(home_activity.this,About_activity.class);
+                startActivity(about_2);
+                return true;
 
 
             default:

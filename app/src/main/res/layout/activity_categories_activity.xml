@@ -12,7 +12,7 @@
         android:orientation="vertical">
 
         <LinearLayout
-            android:background="#146EB4"
+            android:background="@color/colorPrimary"
             android:gravity="center"
             android:orientation="horizontal"
             android:layout_width="match_parent"
@@ -54,16 +54,40 @@
                 android:layout_marginBottom="10dp"
                 android:layout_marginTop="10dp"
                 android:layout_marginRight="10dp"
-                android:layout_width="150dp"
-                android:layout_height="150dp" />
+                android:layout_width="200dp"
+                android:layout_height="200dp" />
 
             <ImageView
                 android:id="@+id/kodava_category"
                 android:layout_marginBottom="10dp"
                 android:layout_marginTop="10dp"
                 android:layout_marginLeft="10dp"
-                android:layout_width="150dp"
-                android:layout_height="150dp"/>
+                android:layout_width="200dp"
+                android:layout_height="200dp"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/all_category"
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_width="200dp"
+                android:layout_height="200dp" />
+
+            <ImageView
+                android:id="@+id/other_category"
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_width="200dp"
+                android:layout_height="200dp"/>
 
         </LinearLayout>
 
