@@ -107,7 +107,9 @@ public class Description_activity extends AppCompatActivity implements ImageAdap
 
 
         mRecyclerViewdescription.setHasFixedSize(true);
-        mRecyclerViewdescription.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL,false));
+        //to reverese just replace the false with true and all the line below
+        mRecyclerViewdescription.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL,true));
+
 
         mUploads = new ArrayList<>();
         mDatabaseRef = FirebaseDatabase.getInstance().getReference("all");
@@ -128,6 +130,7 @@ public class Description_activity extends AppCompatActivity implements ImageAdap
 
                 mRecyclerViewdescription.setAdapter(mAdapter);
 
+                mRecyclerViewdescription.scrollToPosition(mRecyclerViewdescription.getAdapter().getItemCount()-1);
                 mAdapter.setOnItemClickListener(Description_activity.this);
 
 

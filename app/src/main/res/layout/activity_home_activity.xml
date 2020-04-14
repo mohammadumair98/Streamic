@@ -96,7 +96,9 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:gravity="center_horizontal|center_vertical"
-            android:text="LATEST MOVIES"
+            android:textStyle="bold"
+            android:fontFamily="sans-serif-condensed-medium"
+            android:text="NEW ARRIVALS"
             android:textColor="@android:color/background_light"
             android:textSize="18sp" />
     </LinearLayout>
@@ -114,6 +116,7 @@
         android:layout_marginTop="10dp">
 
         <androidx.recyclerview.widget.RecyclerView
+
             android:id="@+id/recycler_view"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -128,12 +131,14 @@
         android:background="#2B2B2B">
 
         <TextView
+            android:textStyle="bold"
+            android:fontFamily="sans-serif-condensed-medium"
             android:id="@+id/textViewclassic"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:gravity="center_horizontal|center_vertical"
-            android:text="CLASSIC MOVIES"
+            android:text="KANNADA MOVIES AND SHORT FILMS"
             android:textColor="@android:color/background_light"
             android:textSize="18sp" />
     </LinearLayout>
@@ -157,6 +162,8 @@
             android:background="#2B2B2B">
 
             <TextView
+                android:fontFamily="sans-serif-condensed-medium"
+                android:textStyle="bold"
                 android:id="@+id/textViewall"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
@@ -180,7 +187,43 @@
                 android:background="@color/colorPrimary"
                 android:scrollbars="horizontal" />
         </LinearLayout>
-</LinearLayout>
+
+
+        //for kodava movies
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="36dp"
+            android:background="#2B2B2B">
+
+            <TextView
+                android:fontFamily="sans-serif-condensed-medium"
+                android:textStyle="bold"
+                android:id="@+id/textViewkodava"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center_horizontal|center_vertical"
+                android:text="KODAVA"
+                android:textColor="@android:color/background_light"
+                android:textSize="18sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recycler_view_kodava"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="-2dp"
+                android:background="@color/colorPrimary"
+                android:scrollbars="horizontal" />
+        </LinearLayout>
+
+    </LinearLayout>
     </ScrollView>
     </LinearLayout>
 </ScrollView>

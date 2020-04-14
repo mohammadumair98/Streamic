@@ -39,23 +39,26 @@ import java.util.List;
 
 public class home_activity extends AppCompatActivity implements ImageAdapter.OnItemClickListener {
 
-    private RecyclerView mRecyclerView;
+
     private ImageAdapter mAdapter;
-
-    private DatabaseReference mDatabaseRef;
-    private List<Upload> mUploads;
-
-    private RecyclerView mRecyclerView2;
     private ImageAdapter mAdapter2;
     private ImageAdapter mAdapter3;
+    private ImageAdapter mAdapter4;
 
+    private List<Upload> mUploads;
     private List<Upload> mUploads2;
     private List<Upload> mUploads3;
+    private List<Upload> mUploads4;
 
+    private DatabaseReference mDatabaseRef;
     private DatabaseReference mDatabaseRef2;
     private DatabaseReference mDatabaseRef3;
+    private DatabaseReference mDatabaseRef4;
 
+    private RecyclerView mRecyclerView;
+    private RecyclerView mRecyclerView2;
     private RecyclerView mRecyclerView3;
+    private RecyclerView mRecyclerView4;
 
 
     TextView categories;
@@ -71,10 +74,12 @@ public class home_activity extends AppCompatActivity implements ImageAdapter.OnI
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home_activity);
+
+        //for recyclerview
         mRecyclerView = findViewById(R.id.recycler_view);
         mRecyclerView2 = findViewById(R.id.recycler_view_classic);
         mRecyclerView3 = findViewById(R.id.recycler_view_all);
-
+        mRecyclerView4 = findViewById(R.id.recycler_view_kodava);
 
         //for slideshow
         imageView1 = findViewById(R.id.viewflipperImage1);
@@ -86,22 +91,31 @@ public class home_activity extends AppCompatActivity implements ImageAdapter.OnI
         //for categories tab
         categories = findViewById(R.id.go_categories);
 
+        //progressbar
         progressBar= findViewById(R.id.progressBarhome);
 
 
         progressBar.setVisibility(View.VISIBLE);
-        update();
-        mRecyclerView.setHasFixedSize(true);
-        mRecyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL,false));
 
+        //for slideshow updation
+        update();
+
+        mRecyclerView.setHasFixedSize(true);
+        mRecyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL,true));
 
         //2nd recycler view
         mRecyclerView2.setHasFixedSize(true);
         mRecyclerView2.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
 
 
+        //3rd recycler view
         mRecyclerView3.setHasFixedSize(true);
         mRecyclerView3.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
+
+        //for 4th recycler view
+        mRecyclerView4.setHasFixedSize(true);
+        mRecyclerView4.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
+
 
 
         mUploads = new ArrayList<>();
@@ -124,6 +138,7 @@ public class home_activity extends AppCompatActivity implements ImageAdapter.OnI
                 mAdapter = new ImageAdapter(home_activity.this, mUploads);
 
                 mRecyclerView.setAdapter(mAdapter);
+                mRecyclerView.scrollToPosition(mRecyclerView.getAdapter().getItemCount()-1);
 
                 mAdapter.setOnItemClickListener(home_activity.this);
 
@@ -143,7 +158,7 @@ public class home_activity extends AppCompatActivity implements ImageAdapter.OnI
 
         //2nd list
         mUploads2 = new ArrayList<>();
-        mDatabaseRef2 = FirebaseDatabase.getInstance().getReference("classic");
+        mDatabaseRef2 = FirebaseDatabase.getInstance().getReference("kannada");
 
         mDatabaseRef2.addValueEventListener(new ValueEventListener() {
             @Override
@@ -189,6 +204,37 @@ public class home_activity extends AppCompatActivity implements ImageAdapter.OnI
                 mRecyclerView3.setAdapter(mAdapter3);
 
                 mAdapter3.setOnItemClickListener(home_activity.this);
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                Toast.makeText(home_activity.this, databaseError.getMessage(), Toast.LENGTH_SHORT).show();
+            }
+
+
+        });
+
+
+        //kodava recycler view
+        mUploads4 = new ArrayList<>();
+        mDatabaseRef4 = FirebaseDatabase.getInstance().getReference("kodava");
+
+        mDatabaseRef4.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                for (DataSnapshot postSnapshot : dataSnapshot.getChildren()) {
+
+                    Upload upload = postSnapshot.getValue(Upload.class);
+                    mUploads4.add(upload);
+                }
+
+                mAdapter4 = new ImageAdapter(home_activity.this, mUploads4);
+
+                mRecyclerView4.setAdapter(mAdapter4);
+
+                mAdapter4.setOnItemClickListener(home_activity.this);
                 progressBar.setVisibility(View.GONE);
             }
 

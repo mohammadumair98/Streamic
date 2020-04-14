@@ -8,7 +8,9 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.GridLayout;
+import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import com.google.firebase.database.DataSnapshot;
@@ -25,12 +27,16 @@ public class kannada_activity extends AppCompatActivity implements  ImageAdapter
     private DatabaseReference mDatabaseRef;
     private List<Upload> mUploads;
     private ImageAdapter mAdapter;
+    LinearLayout progress_layout;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_kannada_activity);
 
         mRecyclerViewdescription = findViewById(R.id.recycler_view_kannada);
+        progress_layout = findViewById(R.id.linear_progress);
+
+        progress_layout.setVisibility(View.VISIBLE);
 
         int number_column = 3;
         mRecyclerViewdescription.setHasFixedSize(true);
@@ -58,6 +64,7 @@ public class kannada_activity extends AppCompatActivity implements  ImageAdapter
 
                 mAdapter.setOnItemClickListener(kannada_activity.this);
 
+                progress_layout.setVisibility(View.GONE);
 
 
 

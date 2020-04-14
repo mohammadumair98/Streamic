@@ -12,7 +12,7 @@ import com.squareup.picasso.Picasso;
 
 public class Categories_activity extends AppCompatActivity {
 
-    ImageView kannada,kodava,all,other;
+    ImageView kannada,kodava,all,other,short_movie,originals;
     TextView goback;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,6 +24,8 @@ public class Categories_activity extends AppCompatActivity {
         kodava = findViewById(R.id.kodava_category);
         all = findViewById(R.id.all_category);
         other = findViewById(R.id.other_category);
+        short_movie = findViewById(R.id.short_movie_category);
+        originals = findViewById(R.id.documentory_activity);
         //to go back home
         goback=findViewById(R.id.gohomecategory);
 
@@ -40,7 +42,19 @@ public class Categories_activity extends AppCompatActivity {
                 .into(kodava);
 
         Picasso.get()
-                .load("https://firebasestorage.googleapis.com/v0/b/cine-duniya.appspot.com/o/TYPES%20CATEGORY%2FAll-1.jpg?alt=media&token=94cfec6e-9f57-470b-80bd-d69748cc45d2")
+                .load("https://firebasestorage.googleapis.com/v0/b/cine-duniya.appspot.com/o/TYPES%20CATEGORY%2FSHORT%20FILMS.jpg?alt=media&token=05fd0827-7940-4b5d-a258-4625236b6c92")
+                .fit()
+                .centerInside()
+                .into(short_movie);
+
+        Picasso.get()
+                .load("https://firebasestorage.googleapis.com/v0/b/cine-duniya.appspot.com/o/TYPES%20CATEGORY%2FORIGINALS.jpg?alt=media&token=4c100c54-1ecb-45d5-9215-8ba2ab55a902")
+                .fit()
+                .centerInside()
+                .into(originals);
+
+        Picasso.get()
+                .load("https://firebasestorage.googleapis.com/v0/b/cine-duniya.appspot.com/o/TYPES%20CATEGORY%2FALL.jpg?alt=media&token=58786c93-4a64-4938-a6a8-53da3b4028d9")
                 .fit()
                 .centerInside()
                 .into(all);
@@ -54,6 +68,7 @@ public class Categories_activity extends AppCompatActivity {
 
 
 
+        //for kannada movies
         kannada.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -64,6 +79,7 @@ public class Categories_activity extends AppCompatActivity {
             }
         });
 
+        //for kodava movies
         kodava.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -74,6 +90,29 @@ public class Categories_activity extends AppCompatActivity {
             }
         });
 
+        //for short movie
+        short_movie.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent short_intent = new Intent(Categories_activity.this,kannada_activity.class);
+                String cat = "short";
+                short_intent.putExtra("category",cat);
+                startActivity(short_intent);
+            }
+        });
+
+        //for originals
+        originals.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent documentory_intent = new Intent(Categories_activity.this,kannada_activity.class);
+                String cat = "originals";
+                documentory_intent.putExtra("category",cat);
+                startActivity(documentory_intent);
+            }
+        });
+
+        //for all movies
         all.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -84,6 +123,7 @@ public class Categories_activity extends AppCompatActivity {
             }
         });
 
+        //for other langauge movies
         other.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
