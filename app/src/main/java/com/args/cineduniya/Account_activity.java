@@ -23,6 +23,8 @@ public class Account_activity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_account_activity);
 
+        //for the top left back button
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         logout = findViewById(R.id.logout_button);
         user_name = findViewById(R.id.usernamedisplay);
         mfirebaseauth = FirebaseAuth.getInstance();

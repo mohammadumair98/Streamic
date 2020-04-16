@@ -12,12 +12,14 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.squareup.picasso.Picasso;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class ImageAdapter extends RecyclerView.Adapter<ImageAdapter.ImageViewHolder> {
@@ -142,6 +144,19 @@ public class ImageAdapter extends RecyclerView.Adapter<ImageAdapter.ImageViewHol
     public void setOnItemClickListener(OnItemClickListener listener)
     {
         mListener = listener;
+
+    }
+
+    public void filerList(ArrayList<Upload> filterList)
+    {
+        try {
+            muploads = filterList;
+            notifyDataSetChanged();
+
+        }catch (Exception e)
+        {
+            Toast.makeText(mContext, ""+e, Toast.LENGTH_SHORT).show();
+        }
 
     }
 }

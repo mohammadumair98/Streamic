@@ -33,6 +33,8 @@ public class kannada_activity extends AppCompatActivity implements  ImageAdapter
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_kannada_activity);
 
+        //for the top left back button
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         mRecyclerViewdescription = findViewById(R.id.recycler_view_kannada);
         progress_layout = findViewById(R.id.linear_progress);
 

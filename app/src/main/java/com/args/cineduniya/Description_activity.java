@@ -37,6 +37,8 @@ public class Description_activity extends AppCompatActivity implements ImageAdap
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_description_activity);
 
+        //for the top left back button
+        //getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         banner = findViewById(R.id.movie_banner);
         poster = findViewById(R.id.movie_poster_description);
         movie_name = findViewById(R.id.movie_name_description);

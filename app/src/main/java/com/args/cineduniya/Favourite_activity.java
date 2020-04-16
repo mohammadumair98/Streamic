@@ -16,6 +16,8 @@ public class Favourite_activity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_favourite_activity);
 
+        //for the top left back button
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         coming_soon_image = findViewById(R.id.coming_soon);
 
         Picasso.get()

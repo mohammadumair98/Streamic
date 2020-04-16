@@ -13,13 +13,15 @@ import com.squareup.picasso.Picasso;
 public class Categories_activity extends AppCompatActivity {
 
     ImageView kannada,kodava,all,other,short_movie,originals;
-    TextView goback;
+    TextView goback,gosearch;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_categories_activity);
 
 
+        //for the top left back button
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         kannada = findViewById(R.id.kannada_category);
         kodava = findViewById(R.id.kodava_category);
         all = findViewById(R.id.all_category);
@@ -28,6 +30,7 @@ public class Categories_activity extends AppCompatActivity {
         originals = findViewById(R.id.documentory_activity);
         //to go back home
         goback=findViewById(R.id.gohomecategory);
+        gosearch = findViewById(R.id.gohomesearch);
 
         Picasso.get()
                 .load("https://firebasestorage.googleapis.com/v0/b/cine-duniya.appspot.com/o/TYPES%20CATEGORY%2Fkannada%20(1).jpg?alt=media&token=9817abc2-940e-459f-8cdf-2565a8c1b731")
@@ -140,6 +143,15 @@ public class Categories_activity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent home = new Intent(Categories_activity.this,home_activity.class);
                 startActivity(home);
+                finish();
+            }
+        });
+
+        gosearch.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent search = new Intent(Categories_activity.this,search_activity.class);
+                startActivity(search);
                 finish();
             }
         });

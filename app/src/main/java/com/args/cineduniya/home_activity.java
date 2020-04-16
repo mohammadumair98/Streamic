@@ -61,7 +61,7 @@ public class home_activity extends AppCompatActivity implements ImageAdapter.OnI
     private RecyclerView mRecyclerView4;
 
 
-    TextView categories;
+    TextView categories,search;
     ProgressBar progressBar;
 
 
@@ -90,6 +90,7 @@ public class home_activity extends AppCompatActivity implements ImageAdapter.OnI
 
         //for categories tab
         categories = findViewById(R.id.go_categories);
+        search = findViewById(R.id.go_search);
 
         //progressbar
         progressBar= findViewById(R.id.progressBarhome);
@@ -254,7 +255,14 @@ public class home_activity extends AppCompatActivity implements ImageAdapter.OnI
             public void onClick(View v) {
                 Intent category = new Intent(home_activity.this,Categories_activity.class);
                 startActivity(category);
-                finish();
+            }
+        });
+
+        search.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent seach_all_movies = new Intent(home_activity.this,search_activity.class);
+                startActivity(seach_all_movies);
             }
         });
     }

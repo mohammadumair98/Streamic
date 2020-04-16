@@ -20,14 +20,24 @@
             <TextView
                 android:id="@+id/gohomecategory"
                 android:gravity="center"
-                android:layout_marginRight="20dp"
                 android:textSize="16dp"
                 android:textStyle="bold"
                 android:text="HOME"
-
                 android:textColor="#fff"
                 android:layout_width="75dp"
                 android:layout_height="35dp"></TextView>
+
+            <TextView
+                android:id="@+id/gohomesearch"
+                android:gravity="center"
+                android:layout_marginLeft="20dp"
+                android:textSize="16dp"
+                android:textStyle="bold"
+                android:text="SEARCH"
+                android:textColor="#fff"
+                android:layout_width="75dp"
+                android:layout_height="35dp"></TextView>
+
 
             <TextView
                 android:gravity="center"

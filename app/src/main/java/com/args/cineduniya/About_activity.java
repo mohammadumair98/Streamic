@@ -18,6 +18,10 @@ public class About_activity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_about_activity);
 
+        //for the top left back button
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+
         webView= findViewById(R.id.about_webview);
         progressBar = findViewById(R.id.progressBarwebabout);
         webView.setWebViewClient(new WebViewClient()

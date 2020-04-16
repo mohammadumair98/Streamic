@@ -20,6 +20,8 @@ public class PrivacyPolicy_activity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_privacy_policy_activity);
 
+        //for the top left back button
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         privacy_policy = findViewById(R.id.privacy);
         progressBar = findViewById(R.id.progressBarprivacy);
 
