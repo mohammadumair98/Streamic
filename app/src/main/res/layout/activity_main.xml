@@ -12,24 +12,9 @@
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="277dp"
+        android:layout_width="175dp"
         android:layout_height="267dp"
-        app:srcCompat="@drawable/big"
+        app:srcCompat="@drawable/logo"
         tools:layout_editor_absoluteX="87dp"
-        tools:layout_editor_absoluteY="104dp" />
-
-    <TextView
-        android:layout_marginTop="250dp"
-        android:id="@+id/textView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="ARGS INFOTECH"
-        android:textColor="@android:color/background_light"
-        android:textSize="18dp"
-        android:fontFamily="sans-serif-condensed-medium"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView"
-        app:layout_constraintVertical_bias="0.789" />
+        tools:layout_editor_absoluteY="104dp"/>
 </LinearLayout>

@@ -189,7 +189,7 @@ public class home_activity extends AppCompatActivity implements ImageAdapter.OnI
 
         //3dr all section
         mUploads3 = new ArrayList<>();
-        mDatabaseRef3 = FirebaseDatabase.getInstance().getReference("all");
+        mDatabaseRef3 = FirebaseDatabase.getInstance().getReference("horror");
 
         mDatabaseRef3.addValueEventListener(new ValueEventListener() {
             @Override
@@ -220,7 +220,7 @@ public class home_activity extends AppCompatActivity implements ImageAdapter.OnI
 
         //kodava recycler view
         mUploads4 = new ArrayList<>();
-        mDatabaseRef4 = FirebaseDatabase.getInstance().getReference("horror");
+        mDatabaseRef4 = FirebaseDatabase.getInstance().getReference("all");
 
         mDatabaseRef4.addValueEventListener(new ValueEventListener() {
             @Override

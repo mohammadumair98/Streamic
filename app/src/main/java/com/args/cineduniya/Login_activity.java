@@ -28,6 +28,9 @@ public class Login_activity extends AppCompatActivity {
     FirebaseUser user;
     ProgressBar progressBar_login;
 
+
+    FirebaseAuth firebaseAuthweather_signed_in;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -46,17 +49,7 @@ public class Login_activity extends AppCompatActivity {
 
         progressBar_login.setVisibility(View.GONE);
 
-        mfirebaselistener = new FirebaseAuth.AuthStateListener() {
-            @Override
-            public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
-                user = mfirebaseAuth.getCurrentUser();
-                if(user!= null){
-                    Intent loggedin = new Intent(Login_activity.this,home_activity.class);
-                    startActivity(loggedin);
-                    finish();
-                }
-            }
-        };
+
 
         login_btn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -129,7 +122,13 @@ public class Login_activity extends AppCompatActivity {
     @Override
     protected void onStart() {
         super.onStart();
-        mfirebaseAuth.addAuthStateListener(mfirebaselistener);
+        firebaseAuthweather_signed_in = FirebaseAuth.getInstance();
+        if(firebaseAuthweather_signed_in.getCurrentUser()!=null)
+        {
+            Intent user_signed_in = new Intent(Login_activity.this,home_activity.class);
+            startActivity(user_signed_in);
+            finish();
+        }
     }
 }
 

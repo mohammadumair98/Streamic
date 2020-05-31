@@ -70,39 +70,6 @@
             android:layout_height="479dp"
             android:layout_marginTop="20dp"
             android:gravity="center"/>
-
-        <LinearLayout
-            android:gravity="center"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-            <TextView
-                android:gravity="center"
-                android:layout_marginLeft="10dp"
-                android:text="APP DEVELOPED BY:"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-            <TextView
-                android:gravity="center"
-                android:layout_marginLeft="10dp"
-                android:text="ARGS INFOTECH"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-            <TextView
-                android:gravity="center"
-                android:layout_marginLeft="10dp"
-                android:text="argsinfotech@gmail.com"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
-        </LinearLayout>
-
-</LinearLayout>
+    </LinearLayout>
 
 </ScrollView>
