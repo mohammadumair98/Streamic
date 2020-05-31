@@ -8,7 +8,7 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.squareup.picasso.Picasso;
+import com.bumptech.glide.Glide;
 
 public class Categories_activity extends AppCompatActivity {
 
@@ -32,39 +32,33 @@ public class Categories_activity extends AppCompatActivity {
         goback=findViewById(R.id.gohomecategory);
         gosearch = findViewById(R.id.gohomesearch);
 
-        Picasso.get()
+        Glide.with(Categories_activity.this)
                 .load("https://firebasestorage.googleapis.com/v0/b/cine-duniya.appspot.com/o/TYPES%20CATEGORY%2Fkannada%20(1).jpg?alt=media&token=9817abc2-940e-459f-8cdf-2565a8c1b731")
-                .fit()
                 .centerInside()
                 .into(kannada);
 
-        Picasso.get()
+        Glide.with(Categories_activity.this)
                 .load("https://firebasestorage.googleapis.com/v0/b/cine-duniya.appspot.com/o/TYPES%20CATEGORY%2Fkodava%20(1).jpg?alt=media&token=160bb998-cee7-4e7c-91b9-1d2355f6a43a")
-                .fit()
                 .centerInside()
                 .into(kodava);
 
-        Picasso.get()
+        Glide.with(Categories_activity.this)
                 .load("https://firebasestorage.googleapis.com/v0/b/cine-duniya.appspot.com/o/TYPES%20CATEGORY%2FSHORT%20FILMS.jpg?alt=media&token=05fd0827-7940-4b5d-a258-4625236b6c92")
-                .fit()
                 .centerInside()
                 .into(short_movie);
 
-        Picasso.get()
+        Glide.with(Categories_activity.this)
                 .load("https://firebasestorage.googleapis.com/v0/b/cine-duniya.appspot.com/o/TYPES%20CATEGORY%2FORIGINALS.jpg?alt=media&token=4c100c54-1ecb-45d5-9215-8ba2ab55a902")
-                .fit()
                 .centerInside()
                 .into(originals);
 
-        Picasso.get()
+        Glide.with(Categories_activity.this)
                 .load("https://firebasestorage.googleapis.com/v0/b/cine-duniya.appspot.com/o/TYPES%20CATEGORY%2FALL.jpg?alt=media&token=58786c93-4a64-4938-a6a8-53da3b4028d9")
-                .fit()
                 .centerInside()
                 .into(all);
 
-        Picasso.get()
+        Glide.with(Categories_activity.this)
                 .load("https://firebasestorage.googleapis.com/v0/b/cine-duniya.appspot.com/o/TYPES%20CATEGORY%2Fother.jpg?alt=media&token=6e3b5c11-08c5-449c-ad75-0c95dc77b68c")
-                .fit()
                 .centerInside()
                 .into(other);
 

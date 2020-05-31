@@ -54,6 +54,7 @@
         android:layout_height="300dp">
 
         <ViewFlipper
+            android:layout_margin="10dp"
             android:id="@+id/viewflipper"
             android:flipInterval="2000"
             android:layout_width="match_parent"
@@ -61,25 +62,25 @@
             android:layout_height="300dp">
 
             <ImageView
-            android:scaleType="centerCrop"
-            android:id="@+id/viewflipperImage1"
-            android:layout_width="match_parent"
-            android:layout_height="300dp"/>
+                android:id="@+id/viewflipperImage1"
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:scaleType="fitCenter" />
 
             <ImageView
-                android:scaleType="centerCrop"
+                android:scaleType="fitCenter"
                 android:id="@+id/viewflipperImage2"
                 android:layout_width="match_parent"
                 android:layout_height="300dp"/>
 
             <ImageView
-                android:scaleType="centerCrop"
+                android:scaleType="fitCenter"
                 android:id="@+id/viewflipperImage3"
                 android:layout_width="match_parent"
                 android:layout_height="300dp"/>
 
             <ImageView
-                android:scaleType="centerCrop"
+                android:scaleType="fitCenter"
                 android:id="@+id/viewflipperImage4"
                 android:layout_width="match_parent"
                 android:layout_height="300dp"/>

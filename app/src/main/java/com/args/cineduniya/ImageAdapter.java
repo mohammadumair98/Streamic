@@ -17,7 +17,7 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.squareup.picasso.Picasso;
+import com.bumptech.glide.Glide;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -66,9 +66,8 @@ public class ImageAdapter extends RecyclerView.Adapter<ImageAdapter.ImageViewHol
         holder.Textview_release_year.setText(uploadCusrrent.getRelease_year().toString());
         //for trailer url
         holder.Textview_trailer.setText(uploadCusrrent.getTrailer().toString());
-        Picasso.get()
+        Glide.with(mContext)
                 .load(uploadCusrrent.getmImageUrl())
-                .fit()
                 .centerInside()
                 .into(holder.imageView);
     }

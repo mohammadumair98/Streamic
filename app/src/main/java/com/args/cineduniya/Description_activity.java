@@ -13,12 +13,12 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.bumptech.glide.Glide;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
-import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -60,9 +60,8 @@ public class Description_activity extends AppCompatActivity implements ImageAdap
         //for loading the banner url
         String banner_url = getIntent().getExtras().getString("banner");
 
-        Picasso.get()
+        Glide.with(Description_activity.this)
                 .load(banner_url)
-                .fit()
                 .centerCrop()
                 .into(banner);
         //for loading description
@@ -78,9 +77,8 @@ public class Description_activity extends AppCompatActivity implements ImageAdap
 
 
         //picasso for loading poster
-        Picasso.get()
+        Glide.with(Description_activity.this)
                 .load(poster_url)
-                .fit()
                 .centerInside()
                 .into(poster);
 

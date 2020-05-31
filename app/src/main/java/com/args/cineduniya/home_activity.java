@@ -19,6 +19,7 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.bumptech.glide.Glide;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.Task;
@@ -32,7 +33,6 @@ import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
-import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -331,25 +331,25 @@ public class home_activity extends AppCompatActivity implements ImageAdapter.OnI
                     StringBuilder image1 = new StringBuilder("");
                     image1.append(doc.get("image1"));
                     String imageurl1 = image1.toString();
-                    Picasso.get().load(imageurl1).into(imageView1);
+                    Glide.with(home_activity.this).load(imageurl1).into(imageView1);
 
                     //image 2
                     StringBuilder image2 = new StringBuilder("");
                     image2.append(doc.get("image2"));
                     String imageurl2 = image2.toString();
-                    Picasso.get().load(imageurl2).into(imageView2);
+                    Glide.with(home_activity.this).load(imageurl2).into(imageView2);
 
                     //image 3
                     StringBuilder image3 = new StringBuilder("");
                     image3.append(doc.get("image3"));
                     String imageurl3 = image3.toString();
-                    Picasso.get().load(imageurl3).into(imageView3);
+                    Glide.with(home_activity.this).load(imageurl3).into(imageView3);
 
                     //image 4
                     StringBuilder image4 = new StringBuilder("");
                     image4.append(doc.get("image4"));
                     String imageurl4 = image4.toString();
-                    Picasso.get().load(imageurl4).into(imageView4);
+                    Glide.with(home_activity.this).load(imageurl4).into(imageView4);
 
                 }
             }

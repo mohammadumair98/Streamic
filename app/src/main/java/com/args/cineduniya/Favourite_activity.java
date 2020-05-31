@@ -5,7 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.ImageView;
 
-import com.squareup.picasso.Picasso;
+import com.bumptech.glide.Glide;
 
 public class Favourite_activity extends AppCompatActivity {
 
@@ -20,9 +20,8 @@ public class Favourite_activity extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         coming_soon_image = findViewById(R.id.coming_soon);
 
-        Picasso.get()
+       Glide.with(Favourite_activity.this)
                 .load("https://firebasestorage.googleapis.com/v0/b/cine-duniya.appspot.com/o/coming-soon-flat-circle-icon-vector-soon4128518.png?alt=media&token=b43dbf28-573d-4b2a-a14f-ac3deaa95008")
-                .fit()
                 .centerCrop()
                 .into(coming_soon_image);
 
