@@ -51,7 +51,7 @@
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="300dp">
+        android:layout_height="260dp">
 
         <ViewFlipper
             android:layout_margin="10dp"
@@ -59,31 +59,31 @@
             android:flipInterval="2000"
             android:layout_width="match_parent"
             android:autoStart="true"
-            android:layout_height="300dp">
+            android:layout_height="240dp">
 
             <ImageView
                 android:id="@+id/viewflipperImage1"
                 android:layout_width="match_parent"
-                android:layout_height="300dp"
+                android:layout_height="240dp"
                 android:scaleType="fitCenter" />
 
             <ImageView
                 android:scaleType="fitCenter"
                 android:id="@+id/viewflipperImage2"
                 android:layout_width="match_parent"
-                android:layout_height="300dp"/>
+                android:layout_height="240dp"/>
 
             <ImageView
                 android:scaleType="fitCenter"
                 android:id="@+id/viewflipperImage3"
                 android:layout_width="match_parent"
-                android:layout_height="300dp"/>
+                android:layout_height="240dp"/>
 
             <ImageView
                 android:scaleType="fitCenter"
                 android:id="@+id/viewflipperImage4"
                 android:layout_width="match_parent"
-                android:layout_height="300dp"/>
+                android:layout_height="240dp"/>
         </ViewFlipper>
     </LinearLayout>
 
@@ -148,7 +148,7 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:gravity="center_horizontal|center_vertical"
-            android:text="KANNADA MOVIES AND SHORT FILMS"
+            android:text="HOLLYWOOD"
             android:textColor="@android:color/background_light"
             android:textSize="18sp" />
     </LinearLayout>
@@ -214,7 +214,7 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:gravity="center_horizontal|center_vertical"
-                android:text="KODAVA"
+                android:text="HORROR"
                 android:textColor="@android:color/background_light"
                 android:textSize="18sp" />
         </LinearLayout>

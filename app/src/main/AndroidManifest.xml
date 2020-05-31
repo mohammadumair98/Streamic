@@ -33,8 +33,10 @@
             android:theme="@style/Theme.AppCompat.DayNight.NoActionBar" />
         <activity android:name=".forgot_password_activity" />
         <activity android:name=".SignUp_activity" />
-        <activity android:name=".home_activity" />
-        <activity android:name=".Login_activity" />
+        <activity android:name=".home_activity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".Login_activity"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".MainActivity"
             android:screenOrientation="portrait"
