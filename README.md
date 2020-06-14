@@ -4,7 +4,7 @@
 <p>Streamic allows users to stream movie directly on their mobile devices. The users will have the privileage of choosing from categories or directly searching for a movie. </p>
 <p><h3>Features: </h3></p>
 Login/signup feature<br>
-Stream movies throug ionternet<br>
+Stream movies throug internet<br>
 Search for movies on the database<br>
 Choose by categories<br>
 Add movies to favorites and watch later<br>
