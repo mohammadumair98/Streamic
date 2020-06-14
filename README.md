@@ -2,7 +2,14 @@
 <img height="150" src="https://firebasestorage.googleapis.com/v0/b/github--images.appspot.com/o/streamic%2Fbig.png?alt=media&token=b0633934-f14b-4f5b-881b-d41de987954d"></img>
 <center><h1><b>ABOUT THE APP :</b></h1></center>
 <p>Streamic allows users to stream movie directly on their mobile devices. The users will have the privileage of choosing from categories or directly searching for a movie. </p>
+
+
+<a href="/files/download-file.pdf" download="newname" target="_blank" class="et_pb_button" style="color: #dd9933;">Download Link</a>
+
+
 <p><h3>Features: </h3></p>
+
+
 Login/signup feature<br>
 Choose by categories<br>
 Stream movies through internet<br>
