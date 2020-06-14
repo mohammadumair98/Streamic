@@ -3,7 +3,7 @@
 <center><h1><b>ABOUT THE APP :</b></h1></center>
 <p>Streamic allows users to stream movie directly on their mobile devices. The users will have the privileage of choosing from categories or directly searching for a movie. </p>
 
-
+<p><h3>Download the app here: </h3></p>
 <a href="https://firebasestorage.googleapis.com/v0/b/github--images.appspot.com/o/streamic%2Fapp-release.apk?alt=media&token=dfbbc75f-faed-4f47-bdc5-777eb2897355" download="newname" target="_blank" class="et_pb_button" style="color: #dd9933;">Download Link</a>
 
 
