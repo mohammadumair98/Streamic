@@ -8,5 +8,3 @@ STREAMIC is an online video streaming app where you can stream movies and short 
 
 <img src="https://firebasestorage.googleapis.com/v0/b/github--images.appspot.com/o/streamic%2Fstreamic%20banner.jpg?alt=media&token=d2e23067-997c-4875-b54a-c725b73442f2"></img>
 
-
-https://firebasestorage.googleapis.com/v0/b/github--images.appspot.com/o/streamic%2Fstreamic%20banner.jpg?alt=media&token=d2e23067-997c-4875-b54a-c725b73442f2
