@@ -14,5 +14,5 @@ Add movies to favorites and watch later<br>
 <p></p>
 <p><i>The movies in the app are just for demonstration purpose only</i></p>
 
-<img src="https://firebasestorage.googleapis.com/v0/b/github--images.appspot.com/o/streamic%2Fstreamic%20banner.jpg?alt=media&token=d2e23067-997c-4875-b54a-c725b73442f2"></img>
+<img src="https://firebasestorage.googleapis.com/v0/b/github--images.appspot.com/o/streamic%2Frepository-open-graph-template.jpg?alt=media&token=a5ca83f4-e8d6-49da-9bf2-f604ba4816d3"></img>
 
