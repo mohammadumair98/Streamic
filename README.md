@@ -3,11 +3,11 @@
 <center><h1><b>ABOUT THE APP :</b></h1></center>
 <p>Streamic allows users to stream movie directly on their mobile devices. The users will have the privileage of choosing from categories or directly searching for a movie. </p>
 <p><h3>Features: </h3></p>
-<p>Login/signup</p>
-<p>Stream movies</p>
-<p>Search for movies</p>
-<p>Choose by categories</p>
-<p>Add movies to favorites</p>
+Login/signup<br>
+Stream movies<br>
+Search for movies<br>
+Choose by categories<br>
+Add movies to favorites<br>
 <p></p>
 <p></p>
 <center><h1><b>Disclaimer :</b></h1></center>
